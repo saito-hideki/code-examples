@@ -29,7 +29,7 @@ def get_standard_value_list(data, avg, standard):
 def get_deviation_value_list(data):
     deviation_values = []
     for i in range(len(data)):
-        deviation_values.append(data[i] * 10 + 50 )
+        deviation_values.append(data[i] * 10 + 50)
     return deviation_values
 
 
