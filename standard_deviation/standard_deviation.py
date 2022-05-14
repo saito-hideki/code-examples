@@ -26,11 +26,11 @@ def get_standard_value_list(data, avg, standard):
     return standard_values
 
 
-def get_deviation_value(data):
-    devition_values = []
+def get_deviation_value_list(data):
+    deviation_values = []
     for i in range(len(data)):
-        devition_values.append(data[i] * 10 + 50 )
-    return devition_values
+        deviation_values.append(data[i] * 10 + 50 )
+    return deviation_values
 
 
 def main():
@@ -48,7 +48,7 @@ def main():
     standard = get_standard_deviation(sorted_data, avg)
     numpy_standard = std(sorted_data)
     standard_values = get_standard_value_list(sorted_data, avg, standard)
-    deviation_values = get_deviation_value(standard_values)
+    deviation_values = get_deviation_value_list(standard_values)
 
     if(numpy_standard != standard):
         sys.stderr.write(
@@ -57,8 +57,7 @@ def main():
             )
         sys.exit(1)
 
-    print(f'サンプルデータ: {original_data}')
-    print(f'サンプルデータ(ソート済): {sorted_data}')
+    print(f'サンプルデータ: {sorted_data}')
     print(f'合計: {total}')
     print(f'要素数: {args.number}')
     print(f'平均: {avg}')
