@@ -41,6 +41,10 @@ def main():
                         help='an integer for the number of the example data')
     args = parser.parse_args()
 
+    if not args.number:
+      parser.print_help()
+      exit(1)
+
     original_data = generate_data(args.number)
     sorted_data = sorted(original_data)
     total = sum(sorted_data)
